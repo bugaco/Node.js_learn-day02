@@ -1,7 +1,14 @@
 <html>
 <body>
+    <%- include('partials/header') -%>
 <form action="/upload" method="POST" enctype="multipart/form-data">
-    <h1><%= people %></h1>
+    <h1><%= people.age %></h1>
+    <ul>
+        <% people.hobbies.forEach(function (item) { %>
+            <li><%= item %></li>
+        <% }) %>
+        
+    </ul>
     <h2>单图上传</h2>
     <input type="file" name="logo" >
     <input type="submit" value="提交">

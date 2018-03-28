@@ -62,8 +62,12 @@ app.post('/upload', upload.single('logo'), function(req, res) {
 app.set('view engine', 'ejs');
 
 app.get('/ejs/:name', function(req, res) {
-    var name = req.params.name
-    res.render('form', {people: name});
+    var person = {age: 28, hobbies:['eating', 'fighting', 'fishing']}
+    res.render('form', {people: person});
+});
+
+app.get('/about', function(req, res) {
+    res.render('about');
 });
 
 app.listen(3000)
